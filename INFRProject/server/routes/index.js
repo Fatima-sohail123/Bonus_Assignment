@@ -7,28 +7,42 @@ let User = userModel.User;
 
 /* GET index page. */
 router.get('/', function(req, res, next) {
-  res.render('pages/index', { title: 'Home' });
+  res.render('pages/index', { title: 'Home',
+    displayName: req.user ? req.user.displayName: ''
+  });
 });
 /* GET home page. */
 router.get('/home', function(req, res, next) {
-  res.render('pages/index', { title: 'Home' });
+  res.render('pages/index', { title: 'Home',
+    displayName: req.user ? req.user.displayName: ''
+  });
 });
 /* GET About page. */
 router.get('/Aboutus', function(req, res, next) {
-  res.render('pages/Aboutus', { title: 'About us' });
+  res.render('pages/Aboutus', { title: 'About us',
+    displayName: req.user ? req.user.displayName: ''
+  });
+
 });
 /* GET products page. */
 router.get('/products', function(req, res, next) {
-  res.render('pages/products', { title: 'Products' });
+  res.render('pages/products', { title: 'Products',
+    displayName: req.user ? req.user.displayName: ''
+  });
 });
 /* GET service page. */
 router.get('/service', function(req, res, next) {
-  res.render('pages/services', { title: 'Service' });
+  res.render('pages/services', { title: 'Service',
+    displayName: req.user ? req.user.displayName: ''
+  });
 });
 /* GET contactus page. */
 router.get('/contactus', function(req, res, next) {
-  res.render('pages/contactus', { title: 'Contact Us' });
+  res.render('pages/contactus', { title: 'Contact Us',
+    displayName: req.user ? req.user.displayName: ''
+  });
 });
+
 router.get('/login', function(req, res, next){
   // built in in passport so it uses small u
   if(!req.user)
