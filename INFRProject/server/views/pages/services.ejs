@@ -1,0 +1,69 @@
+<%- include ("../Partials/header.ejs")%>
+<%- include ("../Partials/main_nav.ejs")%>
+<h1> Services at the Farm </h1>
+
+<style>
+    /* Ensure the body has proper margin and padding */
+    body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Container to hold everything */
+    .container {
+        display: flex; /* Arrange images horizontally */
+        justify-content: space-between; /* Add space between images */
+        align-items: flex-start; /* Align items at the top */
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    /* Styling for each section (image + text) */
+    .section {
+        text-align: center;
+        width: 30%; /* Adjust width to fit three items in a row */
+    }
+
+    /* Image size styling */
+    .section img {
+        width: 200px; /* Set image width */
+        height: auto;
+    }
+
+    /* Text styling */
+    .section p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-top: 10px; /* Space between image and text */
+    }
+
+</style>
+
+<div class="container">
+    <div class="section">
+        <!-- Image on the left -->
+        <img src="/Assets/images/Apple_picking.jpg" alt="Apple Picking">
+        <p> Apple picking on Sundays from 9am to 12pm for 3 dollars per pound</p>
+    </div>
+
+    <div class="section">
+        <!-- Image in the middle -->
+        <img src="/Assets/images/Tractor_ride.jpg" alt="Tractor Ride">
+        <p> Tractor rides for everyone on Monday from 3-6pm, 2 dollars per person</p>
+    </div>
+
+    <div class="section">
+        <!-- Image on the right -->
+        <img src="/Assets/images/Cherry_picking.jpg" alt="Cherry Picking">
+        <p> Free cherry picking from 1-3pm on Fridays</p>
+    </div>
+</div>
+
+<!-- Text content -->
+<p> Free cucumber picking on Tuesdays from 10am-12pm</p>
+<p> How to make fresh Banana Bread class for kids and adults on Wednesdays from 2-4:30pm, 3 dollars per person</p>
+<p> How to start your own home garden class by our lead farmer Tom and his assistant Jerry, from 9am-11am 2 dollars per person</p>
+<p> How to know if your produce has been contaminated by pesticides 101 by Twilight Sparkle, online class from 5-6:30pm</p>
+
+<%- include ("../Partials/footer.ejs")%>

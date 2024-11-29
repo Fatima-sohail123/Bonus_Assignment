@@ -1,0 +1,93 @@
+<%- include ("../Partials/header.ejs")%>
+<%- include ("../Partials/main_nav.ejs")%>
+<head>
+    <meta charset="UTF-8">
+    <title>About Us</title>
+</head>
+<style>
+        /* Ensure the body takes the full height of the viewport */
+        body{
+            height: 100%;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        /* Create a flex container that fills the entire screen */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center;     /* Center content horizontally */
+            height: 100%;
+            text-align: center;
+            padding: 10px;           /* Reduced padding */
+            box-sizing: border-box;
+        }
+
+        /* Style for individual sections with images and text */
+        .section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 15px 0;  /* Reduced margin */
+            max-width: 90%;   /* Reduced max width for text */
+        }
+
+        .section img {
+            width: 150px; /* Smaller image size */
+            height: auto;
+            margin-bottom: 10px; /* Reduced margin */
+        }
+
+        /* Adjust for text container */
+        .section p {
+            max-width: 80%;  /* Keep the text width smaller */
+            font-size: 0.9rem; /* Smaller font size */
+            line-height: 1.4;
+            margin: 0;
+            padding: 5px; /* Added padding for text spacing */
+        }
+
+        /* Optional: Add a background with slight transparency */
+        .middle {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px; /* Smaller padding */
+            border-radius: 8px; /* Slightly smaller border radius */
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Smaller shadow */
+        }
+
+    </style>
+<body>
+    <h1>About Us Page</h1>
+
+    <div class="container">
+        <!-- Section 1 -->
+        <div class="section">
+            <img src="/Assets/images/Organic.jpg" width="150" height="150">
+            <p>Helloooooo everyone, welcome to The Happy Farm. We're a local farm in Ontario that thought, "Hmm, there are too many 
+                pesticides used in farming nowadays." These pesticides cause hormonal imbalances and health issues in people. 
+                That's why I decided to start my own farm—to help the people in Ontario eat healthy fruits and veggies without worrying 
+                about whether their food will cause health issues.
+            </p>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="section">
+            <img src="/Assets/images/Soil.jpg" width="150" height="300">
+            <p>Our fruits and veggies are grown in the finest blend of nutrient-rich soil packed with calcium from eggshells that we get 
+                from our neighboring farm. Eggshells are known to have calcium, which enriches the soil and helps the plants grow.
+            </p>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section">
+            <img src="/Assets/images/Picking.jpg" width="150" height="150">
+            <p>Our produce is hand-picked by our farmers, contributing to the fight against global warming. To help more people get jobs, 
+                we also hire people from around our community to help pick the fruits and veggies. As payment, they get free fruits and 
+                veggies along with their normal pay.
+            </p>
+        </div>
+    </div>
+</body>
+<%- include ("../Partials/footer.ejs")%>
