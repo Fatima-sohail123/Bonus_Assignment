@@ -5,6 +5,10 @@ const DB = require('../config/db');
 let userModel = require('../model/User');
 let User = userModel.User;
 
+//const DB = require('../config/db');
+//let userModel = require('../model/User');
+//let User = userModel.User;
+
 /* GET index page. */
 router.get('/', function(req, res, next) {
   res.render('pages/index', { title: 'Home',
@@ -78,7 +82,7 @@ router.post('/login', function(req, res, next){
       {
         return next(err)
       }
-      return res.redirect('/petslist')
+      return res.redirect('/fruitslist')
     })
   }) (req, res, next)
 })
@@ -122,7 +126,7 @@ router.post('/register', function(req, res, next){
     else
     {
       return passport.authenticate('local')(req,  res, ()=>{
-        res.redirect('/petslist')
+        res.redirect('/fruitslist')
       })
     }
 
