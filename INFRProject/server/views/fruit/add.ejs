@@ -1,0 +1,37 @@
+<%- include ("../Partials/header.ejs")%>
+<%- include ("../Partials/main_nav.ejs")%>
+<!--Content for Add Page-->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="Type_of_Fruit_or_VeggieTextField">Type of Fruit or Veggie</label>
+                    <input type="text" class="form-control" id="Type_of_Fruit_or_VeggieTextField" placeholder="Enter the Book Title" name="Type_of_Fruit_or_Veggie" required>
+                </div>
+                <div class="form-group">
+                    <label for="SeedsTextField">Seeds</label>
+                    <input type="text" class="form-control" id="SeedsTextField" placeholder="Enter the Book Author" name="Seeds" required>
+                </div>
+                <div class="form-group">
+                    <label for="OrganicTextField">Organic</label>
+                    <input type="text" class="form-control" id="OrganicTextField" placeholder="Enter the Organic year" name="Organic" required>
+                </div>
+                <div class="form-group">
+                    <label for="PoundsTextArea">Pounds</label>
+                    <textarea type="text" class="form-control" id="PoundsTextArea"  placeholder="enter the Book Pounds" name="Pounds" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="CostTextField">Cost</label>
+                    <input type="text" class="form-control" id="CostTextField" placeholder="Book's Cost" name="Cost" required>
+                </div>
+                <button class="btn btn-primary" type="submit">Submit
+                <i class="fas fa-edit"></i></button>  
+                <button class="btn btn-warning" type="submit">Cancel
+                    <i class="fas fa-undo"></i></button>    
+            </form>
+        </div>
+    </div>
+</div>
+<%- ("include ../Partials/footer.ejs")%>
