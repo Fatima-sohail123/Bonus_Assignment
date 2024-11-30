@@ -1,45 +1,63 @@
-<%- include ("../Partials/header.ejs")%>
-<%- include ("../Partials/main_nav.ejs")%>
-<!--fruit Database-->
+<%- include("../Partials/header.ejs") %>
+<%- include("../Partials/main_nav.ejs") %>
+<!-- Fruit Database -->
 <main class="container">
     <div class="row">
         <div class="offset-md-1 col-md-10">
             <h1><%= title %></h1>
             <br>
+            <% if (typeof displayName === 'string' && displayName) { %>
             <a href="/fruitslist/add" class="btn btn-primary" role="button">
                 <i class="fas fa-plus-circle"></i> Add Fruit
             </a>
+            <% } %>
             <table class="table table-bordered table-striped table-hover">
+                <!-- Table Header -->
                 <tr class="d-flex">
-                    <th class="text-center col-2">Type of Fruit or Veggie</th>
+                    <th class="text-center col-3">Type of Fruit or Veggie</th>
                     <th class="text-center col-2">Seeds</th>
-                    <th class="text-center col-1">Organic</th>
-                    <th class="col-4">Pounds</th>
-                    <th class="text-center col-1">Cost</th>
+                    <th class="text-center col-2">Organic</th>
+                    <th class="col-2">Pounds</th>
+                    <th class="text-center col-2">Cost</th>
+                    <% if (typeof displayName === 'string' && displayName) { %>
+                        <th class="text-center col-2">Edit</th>
+                        <th class="text-center col-2">Delete</th>
+                    <% } %>
                 </tr>
-                <% for(let count=0;count<FruitList.length;count++) { %>
-                <tr class="d-flex">
-                    <td class="text-center col-2"><%= FruitList[count]["Type of Fruit or Veggie"] %></td>
-                    <td class="text-center col-2"><%= FruitList[count].Seeds %></td>
-                    <td class="text-center col-1"><%=FruitList[count].Organic%></td>
-                    <td class="col-4"><%= FruitList[count].Pounds %> </td>
-                    <td class="text-center col-1"><%= FruitList[count].Cost %></td>
-                    <td class="text-center col-1">
-                        <a href="/fruitslist/edit/<%= FruitList[count]._id%>"
-                            class="btn btn-primary btn-sm">
-                        <i class="fas fa-pencil-alt"></i>Edit
-                    </a>
-                    </td>
-                    <td class="text-center col-1">
-                        <a href="/fruitslist/delete/<%= FruitList[count]._id%>"
-                            class="btn btn-danger btn-sm">
-                        <i class="fas fa-trash-alt"></i>Delete
-                    </a>
-                    </td>
-                </tr>    
-                    <%} %>
+
+                <!-- Table Rows -->
+                <% if (Array.isArray(FruitList) && FruitList.length > 0) { %>
+                    <% for (let count = 0; count < FruitList.length; count++) { %>
+                    <tr class="d-flex">
+                        <td class="text-center col-3"><%= FruitList[count].Type_of_Fruit_or_Veggie %></td>
+                        <td class="text-center col-2"><%= FruitList[count].Seeds %></td>
+                        <td class="text-center col-2"><%= FruitList[count].Organic %></td>
+                        <td class="col-3"><%= FruitList[count].Pounds %></td>
+                        <td class="text-center col-2"><%= FruitList[count].Cost %></td>
+                        <% if (typeof displayName === 'string' && displayName) { %>
+                        <td class="text-center col-2">
+                            <a href="/fruitslist/edit/<%= FruitList[count]._id %>" class="btn btn-primary btn-sm">
+                                <i class="fas fa-pencil-alt"></i> Edit
+                            </a>
+                        </td>
+                        <td class="text-center col-1">
+                            <a href="/fruitslist/delete/<%= FruitList[count]._id %>" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash-alt"></i> Delete
+                            </a>
+                        </td>
+                        <% } %>
+                    </tr>
+                    <% } %>
+                <% } else { %>
+                    <!-- No Data Message -->
+                    <tr>
+                        <td colspan="<%= typeof displayName === 'string' && displayName ? 7 : 5 %>" class="text-center">
+                            No fruits or veggies found.
+                        </td>
+                    </tr>
+                <% } %>
             </table>
         </div>
     </div>
 </main>
-<%- include ("../Partials/footer.ejs")%>
+<%- include("../Partials/footer.ejs") %>
